@@ -1,0 +1,22 @@
+.text-justify{
+    text-align: justify;
+}.cronog{
+    margin-left: 4rem;
+}.subnav-home {
+    z-index: 10; 
+    background-color: #ff1717;
+  }
+  .hover-effect {
+    transition: background-color 0.5s ease, transform 0.5s ease;
+    text-transform: uppercase;
+  }
+  
+  .hover-effect:hover {
+    background-color: #ff5722;
+    transform: scale(1.1);
+    color: #fff;
+    transition: .3s;
+  }
+*{
+    text-align: justify;
+}

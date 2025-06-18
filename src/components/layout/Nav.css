@@ -1,0 +1,145 @@
+/* Variáveis de cores */
+:root {
+  --dark-red: #8B0000;
+  --light-red: #FF6B6B;
+  --dark: #121212;
+  --dark-2: #1E1E1E;
+  --dark-3: #2A2A2A;
+  --light: #F8F9FA;
+  --light-2: #E9ECEF;
+  --light-50: rgba(248, 249, 250, 0.5);
+  --dark-50: rgba(18, 18, 18, 0.5);
+}
+
+/* Classes de tema */
+.dark-theme {
+  background-color: var(--dark);
+  color: white;
+}
+
+.light-theme {
+  background-color: var(--light);
+  color: var(--dark);
+}
+
+/* Cores customizadas para Bootstrap */
+.bg-dark-red {
+  background-color: var(--dark-red) !important;
+}
+
+.bg-light-red {
+  background-color: var(--light-red) !important;
+}
+
+.bg-dark-2 {
+  background-color: var(--dark-2) !important;
+}
+
+.bg-dark-3 {
+  background-color: var(--dark-3) !important;
+}
+
+.bg-light-2 {
+  background-color: var(--light-2) !important;
+}
+
+.text-dark-red {
+  color: var(--dark-red) !important;
+}
+
+.text-light-red {
+  color: var(--light-red) !important;
+}
+
+.text-light-50 {
+  color: var(--light-50) !important;
+}
+
+.text-dark-50 {
+  color: var(--dark-50) !important;
+}
+
+/* Botões customizados */
+.btn-dark-red {
+  background-color: var(--dark-red);
+  color: white;
+  border-color: var(--dark-red);
+}
+
+.btn-dark-red:hover {
+  background-color: #7A0000;
+  border-color: #7A0000;
+  color: white;
+}
+
+.btn-outline-dark-red {
+  color: var(--dark-red);
+  border-color: var(--dark-red);
+}
+
+.btn-outline-dark-red:hover {
+  background-color: var(--dark-red);
+  color: white;
+}
+
+.btn-light-red {
+  background-color: var(--light-red);
+  color: white;
+  border-color: var(--light-red);
+}
+
+.btn-light-red:hover {
+  background-color: #E55B5B;
+  border-color: #E55B5B;
+  color: white;
+}
+
+.btn-outline-light-red {
+  color: var(--light-red);
+  border-color: var(--light-red);
+}
+
+.btn-outline-light-red:hover {
+  background-color: var(--light-red);
+  color: white;
+}
+
+/* Transições suaves */
+.transition-all {
+  transition: all 0.3s ease;
+}
+
+/* Hero section */
+.hero-image-container {
+  height: 400px;
+}
+
+.hero-image-main {
+  width: 80%;
+  height: 80%;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-image-secondary {
+  width: 60%;
+  height: 60%;
+  bottom: 0;
+  right: 0;
+  z-index: 2;
+}
+
+/* Cards com hover */
+.shadow-sm-hover {
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+.shadow-sm-hover:hover {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px);
+}
+
+/* Toggle de tema */
+.theme-toggle {
+  z-index: 1000;
+}

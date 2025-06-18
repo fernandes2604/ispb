@@ -1,0 +1,52 @@
+
+.MultiCarousel {
+    overflow: hidden;
+    padding: 5px;
+  } 
+  .MultiCarousel .MultiCarousel-inner {
+    transition: transform 0.5s ease-in-out;
+    display: flex;
+  }
+  
+  .MultiCarousel .item {
+    display: inline-block;
+  }
+  
+  .MultiCarousel .item > div {
+    text-align: center;
+    padding: 10px;
+    margin: 10px;
+    background: #FFF8DC;
+    border-radius: 15px;
+    color: #0e0c0c;
+  }
+  
+  .MultiCarousel .leftLst,
+  .MultiCarousel .rightLst {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    background: #f0f2f5;
+    color: white;
+    width: 5rem;
+    height: 5rem;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+  }
+  
+  .MultiCarousel .leftLst {
+    left: 0;
+  }
+  
+  .MultiCarousel .rightLst {
+    right: 0;
+  }
+  
+  .MultiCarousel .leftLst.over,
+  .MultiCarousel .rightLst.over {
+    pointer-events: none;
+    background: #ccc;
+  }
+  

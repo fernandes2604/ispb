@@ -1,0 +1,234 @@
+import React, { useState, useEffect } from 'react';
+import { Container, Row, Col, Card, Button, Accordion, Carousel, Form } from 'react-bootstrap';
+import { FiArrowRight, FiCode, FiCpu, FiDatabase, FiAward, FiUsers, FiBriefcase, FiSun, FiMoon } from 'react-icons/fi';
+
+function EngenhariaInformatica() {
+  const [activeTab, setActiveTab] = useState('software');
+  const [darkMode, setDarkMode] = useState(false);
+
+  // Efeito para aplicar as classes de tema
+  useEffect(() => {
+    if (darkMode) {
+      document.body.classList.add('dark-theme');
+      document.body.classList.remove('light-theme');
+    } else {
+      document.body.classList.add('light-theme');
+      document.body.classList.remove('dark-theme');
+    }
+  }, [darkMode]);
+
+  const courseData = {
+    hero: {
+      title: "Transforme o Futuro com Engenharia Informática",
+      subtitle: "Domine as tecnologias que estão moldando o amanhã em um curso que combina teoria avançada com aplicação prática.",
+      cta: "Quero fazer parte",
+      stats: [
+        { value: "98%", label: "Empregabilidade" },
+        { value: "4.8", label: "Avaliação dos alunos" },
+        { value: "50+", label: "Parcerias com empresas" }
+      ]
+    },
+    features: [
+      {
+        title: "Aprendizado Baseado em Projetos Reais",
+        description: "Colabore com empresas desde o primeiro ano em desafios reais de tecnologia.",
+        icon: <FiBriefcase size={24} />
+      },
+      {
+        title: "Laboratórios equipados para oferecer o ambiente",
+        description: "Infraestrutura com equipamentos modernos para desenvolvimento e pesquisa.",
+        icon: <FiCpu size={24} />
+      },
+      {
+        title: "Mentoria Personalizada",
+        description: "Acompanhamento individual com professores e profissionais do mercado.",
+        icon: <FiUsers size={24} />
+      }
+    ],
+    specializations: {
+      title: "Especialize-se na Área que Mais Combina com Você",
+      tabs: [
+        {
+          id: 'software',
+          label: 'Engenharia de Software',
+          content: 'Desenvolva sistemas complexos com arquiteturas escaláveis e metodologias ágeis.',
+          courses: ['Arquitetura de Software', 'DevOps', 'Qualidade de Software']
+        },
+        {
+          id: 'ai',
+          label: 'Inteligência Artificial',
+          content: 'Crie soluções inteligentes com machine learning e processamento de dados em larga escala.',
+          courses: ['Deep Learning', 'Visão Computacional', 'Processamento de Linguagem Natural']
+        },
+        {
+          id: 'security',
+          label: 'Segurança Cibernética',
+          content: 'Proteja sistemas e dados contra ameaças digitais com técnicas avançadas.',
+          courses: ['Ethical Hacking', 'Criptografia', 'Forense Digital']
+        }
+      ]
+    },
+    testimonials: [
+      {
+        quote: "O curso me deu as bases para empreender na área de tecnologia ainda durante a graduação.",
+        author: "Ana Silva, Fundadora da TechSolutions",
+        role: "Ex-aluna"
+      },
+      {
+        quote: "A conexão com as empresas parceiras foi crucial para minha colocação no mercado.",
+        author: "Carlos Mendes",
+        role: "Engenheiro na Google"
+      }
+    ]
+  };
+
+  return (
+    <div className={`engenharia-page ${darkMode ? 'dark' : 'light'}`}>
+         {/* Hero Section */}
+      <section className={`hero-section ${darkMode ? 'bg-dark-red' : 'bg-light-red'} py-5`}>
+        <Container>
+          <Row className="align-items-center">
+            <Col lg={6} className="mb-5 mb-lg-0">
+              <h1 className="display-5 fw-bold mb-4">{courseData.hero.title}</h1>
+              <p className={`lead mb-5 `}>{courseData.hero.subtitle}</p>
+              <Button variant={darkMode ? 'light' : 'dark-red'} size="lg" className="px-4 py-3 fw-bold">
+                {courseData.hero.cta} <FiArrowRight className="ms-2" />
+              </Button>
+              
+             
+    
+            </Col>
+            <Col lg={6}>
+              <div className="hero-image-container position-relative">
+                <div className="hero-image-main rounded-4 shadow-lg overflow-hidden">
+                  <img 
+                    src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                    alt="Estudantes trabalhando em projeto de tecnologia" 
+                    className="img-fluid"
+                    loading="eager"
+                  />
+                </div>
+                <div className="hero-image-secondary position-absolute rounded-3 shadow-sm overflow-hidden">
+                  <img 
+                    src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                    alt="Laboratório de informática moderno" 
+                    className="img-fluid"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+            </Col>
+          </Row>
+        </Container>
+      </section>
+
+      {/* Features Section */}
+      <section className={`py-5 ${darkMode ? 'bg-dark' : 'bg-light'}`}>
+        <Container>
+          <Row className="mb-5">
+            <Col className="text-center">
+              <h2 className={`display-5 fw-bold mb-3 ${darkMode ? 'text-white' : 'text-dark'}`}>Por que escolher nosso curso?</h2>
+              <p className={`lead mx-auto ${darkMode ? 'text-light-50' : 'text-muted'}`} style={{maxWidth: '700px'}}>
+                Uma formação completa que vai além do convencional para preparar você para os desafios do mercado
+              </p>
+            </Col>
+          </Row>
+          <Row className="g-4">
+            {courseData.features.map((feature, index) => (
+              <Col md={4} key={index}>
+                <Card className={`h-100 border-0 transition-all ${darkMode ? 'bg-dark-2 text-light' : 'bg-white text-dark'}`}>
+                  <Card.Body className="p-4 text-center">
+                    <div className={`icon-container ${darkMode ? 'bg-light-red' : 'bg-dark-red'} rounded-circle p-3 mb-4 mx-auto`}>
+                      {React.cloneElement(feature.icon, { className: darkMode ? 'text-white' : 'text-white' })}
+                    </div>
+                    <h3 className={`h4 fw-bold mb-3 ${darkMode ? 'text-white' : 'text-dark'}`}>{feature.title}</h3>
+                    <p className={darkMode ? 'text-light-50' : 'text-muted'}>{feature.description}</p>
+                  </Card.Body>
+                </Card>
+              </Col>
+            ))}
+          </Row>
+        </Container>
+      </section>
+
+      {/* Specializations Section */}
+      <section className={`py-5 ${darkMode ? 'bg-dark-2' : 'bg-light-2'}`}>
+        <Container>
+          <Row className="mb-5">
+            <Col className={`${darkMode ? 'bg-dark-red' : 'bg-light-red'}`}>
+              <h2 className={`display-5 fw-bold mb-3 '}`}>{courseData.specializations.title}</h2>
+              <div className="d-flex justify-content-center mb-4">
+                <div className="tabs-container">
+                  {courseData.specializations.tabs.map(tab => (
+                    <Button
+                      key={tab.id}
+                      variant={activeTab === tab.id ? 
+                        (darkMode ? '' : '') : 
+                        (darkMode ? 'outline-light-red' : 'outline-dark-red')}
+                      className={`me-2 ${activeTab === tab.id ? 'active' : ''}`}
+                      onClick={() => setActiveTab(tab.id)}
+                    >
+                      {tab.label}
+                    </Button>
+                  ))}
+                </div>
+              </div>
+            </Col>
+          </Row>
+          <Row>
+            <Col lg={6} className="mb-4 mb-lg-0">
+              <div className={`specialization-content p-4 rounded-3 ${darkMode ? 'bg-dark-3 text-light' : 'bg-light text-dark'}`}>
+                <h3 className={`fw-bold mb-4 ${darkMode ? 'text-white' : 'text-dark'}`}>
+                  {courseData.specializations.tabs.find(t => t.id === activeTab)?.label}
+                </h3>
+                <p className={`lead mb-4 ${darkMode ? 'text-light' : 'text-dark'}`}>
+                  {courseData.specializations.tabs.find(t => t.id === activeTab)?.content}
+                </p>
+                <ul className="course-list">
+                  {courseData.specializations.tabs.find(t => t.id === activeTab)?.courses.map((course, i) => (
+                    <li key={i} className={`d-flex align-items-center mb-2 ${darkMode ? 'text-light' : 'text-dark'}`}>
+                      <FiArrowRight className={`${darkMode ? 'text-light-red' : 'text-dark-red'} me-2`} />
+                      <span>{course}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </Col>
+            <Col lg={6}>
+              <img 
+                src={`https://source.unsplash.com/random/600x400?${activeTab},technology`} 
+                alt={`Imagem representando ${activeTab}`}
+                className="img-fluid rounded-3 shadow"
+                loading="lazy"
+              />
+            </Col>
+          </Row>
+        </Container>
+      </section>
+
+      {/* Final CTA */}
+      <section className={`py-5 ${darkMode ? 'bg-dark' : 'bg-light-red'}`}>
+        <Container>
+          <Row className="justify-content-center">
+            <Col lg={8} className="text-center">
+              <h2 className={`display-5 fw-bold mb-4 `}>Pronto para transformar sua carreira?</h2>
+              <p className={`lead mb-5 `}>
+                Inscreva-se agora e dê o primeiro passo para se tornar um engenheiro de software de alto nível
+              </p>
+              <div className="d-flex gap-3 justify-content-center">
+                <Button  size="lg" className="px-4 py-3 fw-bold">
+                  Inscreva-se agora
+                </Button>
+                <Button  size="lg" className="px-4 py-3 fw-bold">
+                  Fale com um orientador
+                </Button>
+              </div>
+            </Col>
+          </Row>
+        </Container>
+      </section>
+    </div>
+  );
+}
+
+export default EngenhariaInformatica;

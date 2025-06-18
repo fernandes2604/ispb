@@ -1,0 +1,57 @@
+/* associacao-carousel.css */
+.associacao-carousel {
+  max-width: auto; /* Largura máxima do carrossel */
+  margin: 0 auto;
+}
+
+.associacao-carousel .carousel-item {
+  height: 600px; /* Altura fixa para todos os itens */
+}
+
+.associacao-carousel .carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Mantém proporção e cobre todo o espaço */
+  object-position: center; /* Centraliza a imagem */
+}
+
+/* Ajuste para mobile */
+@media (max-width: 768px) {
+  .associacao-carousel .carousel-item {
+    height: 300px;
+  }
+}
+/* Estilo do container principal */
+.album-gallery {
+  max-width: 1200px;
+}
+
+/* Efeito hover nas imagens */
+.album-item:hover .gallery-image {
+  transform: scale(1.03);
+  opacity: 0.9;
+}
+
+/* Container da imagem para manter proporção */
+.image-container {
+  height: 200px;
+  overflow: hidden;
+}
+
+.gallery-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .album-item {
+    margin-bottom: 20px;
+  }
+  
+  .image-container {
+    height: 150px;
+  }
+}
